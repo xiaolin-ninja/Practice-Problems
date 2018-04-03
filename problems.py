@@ -6,4 +6,3 @@ def dig_pow(n, p):
             for i in range(len(num))])
     return total / n if (total % n) == 0 else -1
 
-#
