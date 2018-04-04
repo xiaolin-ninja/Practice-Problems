@@ -9,14 +9,17 @@ class VendingMachine():
     def vend(self, selection, item_money):
         for item in self.items:
             if item['code'].lower() == selection.lower():
-                if item_money == item['price']:
+                if item['quantity'] < 1:
+                    return "{}: Out of stock!".format(item['name'])
+
+                elif item_money == item['price']:
                     item['quantity'] -= 1
                     self.money += item_money
                     return "Vending {}".format(item['name'])
 
                 elif item_money > item['price']:
+                    item['quantity'] -=  1
                     change = item_money - item['price']
-                    item['quantity'] = item['quantity'] - 1
                     self.money += item_money - change
                     return "Vending {} with {:.2f} change.".format(item['name'],
                        change)
@@ -24,11 +27,8 @@ class VendingMachine():
                 elif item_money < item['price']:
                     return "Not enough money!"
 
-                elif item['quantity'] <= 0:
-                    return "{}: Out of stock!".format(item['name'])
-
         else:
-            return "Invalid selection!:Money in vending machine = {:.2f}".format(self.money)
+            return "Invalid selection!: Money in vending machine = {:.2f}".format(self.money)
 
 
 items = [{'name':"Smarties", 'code':"A01", 'quantity':10, 'price':0.60},
