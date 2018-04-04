@@ -22,3 +22,14 @@ def is_reversible(n):
               for i in str(n)[::-1]))
     except:
         return False
+
+# Mexican Wave
+
+def wave(s):
+    result = []
+    letters = list(s)
+    for i, char in enumerate(letters):
+        letters[i] = char.upper()
+        result.append(''.join(letters))
+        letters[i] = char.lower()
+    return result
