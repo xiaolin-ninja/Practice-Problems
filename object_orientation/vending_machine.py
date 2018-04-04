@@ -10,8 +10,12 @@ class VendingMachine():
         for item in self.items:
             # check if this item is the selection
             if item['code'].lower() == selection.lower():
-                # check first if in stock
-                if item['quantity'] < 1:
+                # this ain't no charity machine
+                if item_money < item['price']:
+                    return "Not enough money!"
+
+                # check if in stock
+                elif item['quantity'] < 1:
                     return "{}: Out of stock!".format(item['name'])
 
                 # cachier bot
@@ -26,10 +30,6 @@ class VendingMachine():
                     self.money += item_money - change
                     return "Vending {} with {:.2f} change.".format(item['name'],
                        change)
-
-                # this ain't no charity machine
-                elif item_money < item['price']:
-                    return "Not enough money!"
 
         else:
             return "Invalid selection!: Money in vending machine = {:.2f}".format(self.money)
