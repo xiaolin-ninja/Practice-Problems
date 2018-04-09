@@ -1,5 +1,8 @@
 def carrot_feast(matrix):
-    """calculates number of carrots a bunny will eat in this garden"""   
+    """calculates number of carrots a bunny will eat in this garden
+    >>> carrot_feast([[5, 7, 8, 6, 3], [0, 0, 7, 0, 4], [4, 6, 3, 4, 9], [3, 1, 0, 5, 8]])
+    27
+    """   
     carrots_eaten = 0
     carrots, center_row, center_column = find_center(matrix)
     carrots_eaten += carrots
