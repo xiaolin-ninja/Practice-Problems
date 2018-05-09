@@ -1,8 +1,8 @@
 def angry_boss()
     puts 'What is your first name?'
-    first_name = gets.chomp
+    first_name = gets.chomp.capitalize
     puts 'Ok ' + first_name + ' what is your last name?'
-    last_name = gets.chomp
+    last_name = gets.chomp.capitalize
     puts 'Hello ' + first_name + ' ' + last_name + '. What do you want?'
     while desire = gets.chomp
         if desire.downcase == 'i want a raise'
