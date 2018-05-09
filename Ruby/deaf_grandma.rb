@@ -4,17 +4,19 @@ def deaf_grandma()
 	while count
 		puts '>'
 		chat = gets.chomp
-		if chat.upcase == chat
+		if chat.upcase != chat
 			puts "HUH?! SPEAK UP, SONNY!"
-			if chat.upcase == 'BYE'
+		else
+			if chat == 'BYE'
 				count += 1
 					if count == 3
+						puts 'OH OK TAKE CARE NOW!'
 						break
 					end
+			else
+				count = 0
 			end
-		else
-			count = 0
-			puts 'NO, NOT SINCE' + rand(1930..1950)
+			puts 'NO, NOT SINCE ' + rand(1930..1950).to_s
 		end
 	end
 end
