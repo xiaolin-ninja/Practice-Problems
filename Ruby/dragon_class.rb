@@ -9,7 +9,7 @@ class Dragon
     end
 
     def feed
-        puts "Omnomnom " + @name " loves to eat!"
+        puts "Omnomnom " + @name + " loves to eat!"
         @fullness += 10
         timePasses
     end
@@ -57,7 +57,7 @@ class Dragon
     # methods defined below are only internal to the object
     # cannot be used to directly interact with instances
     def hungry?
-        @fullnesss <= 2
+        @fullness <= 2
     end
 
     def poopy?
@@ -79,8 +79,8 @@ class Dragon
                 exit
             end
 
-        if @poopy >= 10
-            @poopy = 0
+        if @potty >= 10
+            @potty = 0
             puts 'Oops! ' + @name + ' had an accident...'
         end
 
@@ -102,3 +102,15 @@ class Dragon
     end
 
 end
+end
+
+pet = Dragon.new 'Norbert'
+pet.feed
+pet.toss
+pet.walk
+pet.putToBed
+pet.rock
+pet.putToBed
+pet.putToBed
+pet.putToBed
+pet.putToBed
