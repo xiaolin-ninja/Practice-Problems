@@ -17,7 +17,7 @@ class Dragon
     def walk
         puts @name + " is getting chubby! Let's go for a walk"
         @fullness -= 1
-        @intestine += 1
+        @potty += 1
         timePasses
     end
 
