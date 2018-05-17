@@ -1,5 +1,6 @@
 def beer_bottles()
 	puts 'How many beers are on the wall?'
+	# beers = ARGV[0].to_i
 	beers = gets.chomp.to_i
 	while beers > 0
 		if beers == 1
