@@ -1,5 +1,6 @@
 require 'benchmark'
 
+# --------------------------------------- #
 
 def first_anagram?(a, b)
 	# run time:
