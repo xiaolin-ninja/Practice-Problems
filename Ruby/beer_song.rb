@@ -3,11 +3,9 @@ def beer_bottles()
 	beers = gets.chomp.to_i
 	while beers > 0
 		if beers == 1
-			puts "\n #{beers} bottle of beers on the wall, 
-				 #{beers} bottle of beers!"
+			puts "\n#{beers} bottle of beers on the wall, #{beers} bottle of beers!"
 		else
-			puts "\n #{beers} bottles of beers on the wall, 
-				 #{beers} bottles of beers!"
+			puts "\n#{beers} bottles of beers on the wall, #{beers} bottles of beers!"
 		end
 		puts 'You take one down, pass it around,'
 		beers -= 1
